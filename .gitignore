@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+build/
+data/
+datasets/
+sources/
+out/
+shards/
+*.mxl
+*.jpg
+*.png
+*.pdf
+*.tar
+*.tar.gz
+*.tar.zst
