@@ -14,14 +14,13 @@
       "url": "https://zenodo.org/records/15571083/files/mxl.tar.gz?download=1",
       "filename": "mxl.tar.gz",
       "bytes": 1894335797,
-      "sha256": null,
+      "sha256": "01949cc0d9215e2f30924eadc8b1dd148aca90c02e2cf1999bb83df5ffe4d7a4",
       "top_level": "mxl",
-      "description": "PDMX MusicXML archive (Zenodo 15571083), 254,035 .mxl files. Byte length is from the 2026-06-02 download log; the archive itself was not retained, so the digest is unrecorded - run 'make lock-mxl' after the first download to pin it."
+      "description": "PDMX MusicXML archive (Zenodo 15571083), 254,035 .mxl files. Digest computed from the retained 2026-06-02 download recovered off the GPU volume, byte length matching the download log."
     }
   },
   "notes": {
     "not_fetched": "The Zenodo record also carries ~9.6GB of rendered PDFs and the MIDI set. The converter reads neither, so they are deliberately not locked here.",
-    "unpinned_digest": "fetch_source.py refuses a source whose sha256 is null rather than downloading it unverified.",
     "corpus_digests_are_authoritative_here": "Not in the SHA256SUMS beside the data: anyone able to replace a shard on the origin can replace a checksum file hosted next to it. These digests are reviewed in git.",
     "shards_are_prefixed": "Under pdmx-homr-v1/ in a bucket shared with the OSSQ and Lieder source snapshots. package_pdmx.py names shards train-NNNN/valid-NNNN for any corpus, so a second corpus must get its own prefix or it will overwrite these."
   },
