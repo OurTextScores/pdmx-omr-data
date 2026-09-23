@@ -23,6 +23,28 @@ training data for the notation heads, not a measure of performance on real scans
 The record also carries ~9.6GB of rendered PDFs and a MIDI set. The converter reads
 neither, so neither is locked or fetched.
 
+## Fetch the built corpus
+
+The normal path. `sources.lock.json` pins all eight shards by URL, byte length and
+SHA-256, so this is verified rather than merely convenient:
+
+```bash
+make fetch-corpus                 # 1.94 GB, 45,057 windows
+make fetch-corpus SPLIT=valid     #  142 MB,  3,422 windows - all you need to evaluate
+make verify-corpus                # re-check what is on disk
+```
+
+A shard whose digest does not match is deleted rather than left on disk to be trained on.
+Digests come from the lockfile, reviewed in git - never from a checksum file hosted beside
+the data, since anyone able to replace a shard on the origin can replace that too.
+
+| | windows | scores | shards | bytes |
+|---|---|---|---|---|
+| train | 41,635 | 6,376 | 7 | 1.80 GB |
+| valid | 3,422 | 632 | 1 | 142 MB |
+
+Sidecars are `homr.notation-sidecar.v6`; renders are Verovio 6.2.1.
+
 ## Build from scratch
 
 ```bash

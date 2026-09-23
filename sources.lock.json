@@ -21,6 +21,103 @@
   },
   "notes": {
     "not_fetched": "The Zenodo record also carries ~9.6GB of rendered PDFs and the MIDI set. The converter reads neither, so they are deliberately not locked here.",
-    "unpinned_digest": "fetch_source.py refuses a source whose sha256 is null rather than downloading it unverified."
+    "unpinned_digest": "fetch_source.py refuses a source whose sha256 is null rather than downloading it unverified.",
+    "corpus_digests_are_authoritative_here": "Not in the SHA256SUMS beside the data: anyone able to replace a shard on the origin can replace a checksum file hosted next to it. These digests are reviewed in git.",
+    "shard_names_are_unprefixed": "The shards sit at the bucket root as train-NNNN.tar.zst / valid-NNNN.tar.zst, in a bucket shared with other corpora (ossq-source-v1.tar.gz). Packaging any other corpus with the same scheme would overwrite these. A pdmx-homr-v1/ prefix would fix it."
+  },
+  "corpus": {
+    "name": "pdmx-homr-v1",
+    "published": "2026-09-23",
+    "base_url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev",
+    "sidecar_schema": "homr.notation-sidecar.v6",
+    "verovio": "6.2.1",
+    "index_sha256": "994759f4bac7b4200225a2c4e2f650fdf2b80820dee967ee65401502dcc842b7",
+    "splits": {
+      "train": {
+        "windows": 41635,
+        "scores": 6376,
+        "shards": 7
+      },
+      "valid": {
+        "windows": 3422,
+        "scores": 632,
+        "shards": 1
+      }
+    },
+    "description": "Derived corpus: Verovio renders of public-domain PDMX MusicXML, cut into overlapping 8-measure windows, with tokens and v6 notation sidecars. Fetching these skips the ~30 minute local rebuild. The validation split reserves the 632 archived evaluation scores; see docs/BUILD_PIPELINE.md.",
+    "shards": [
+      {
+        "name": "train-0000.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0000.tar.zst",
+        "split": "train",
+        "windows": 6541,
+        "scores": 1024,
+        "bytes": 279261579,
+        "sha256": "2657e4d189b014bcd9f5f3c42151350ed2ddb12d0d15d74364d87b25934bebbd"
+      },
+      {
+        "name": "train-0001.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0001.tar.zst",
+        "split": "train",
+        "windows": 6250,
+        "scores": 927,
+        "bytes": 275191207,
+        "sha256": "a8accb2c87dd54d23d04df9a6196c52067be2d642338423c2f7730893260a5f4"
+      },
+      {
+        "name": "train-0002.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0002.tar.zst",
+        "split": "train",
+        "windows": 6327,
+        "scores": 996,
+        "bytes": 276229739,
+        "sha256": "fd9a11fe55e56b67bb848f50bcc1d8d6114ba948739a2938942eb0b0914018e2"
+      },
+      {
+        "name": "train-0003.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0003.tar.zst",
+        "split": "train",
+        "windows": 6512,
+        "scores": 976,
+        "bytes": 278153377,
+        "sha256": "c16be6a015649fe3e068ffdfe251e02268e3b765da62b71a17c3d66dd4c7b722"
+      },
+      {
+        "name": "train-0004.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0004.tar.zst",
+        "split": "train",
+        "windows": 6403,
+        "scores": 1004,
+        "bytes": 275868337,
+        "sha256": "7b02040bbc974c5c3fe24ab2d4640fcb9ae7d06d2669ec0dbc6669cf5c0d1ec9"
+      },
+      {
+        "name": "train-0005.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0005.tar.zst",
+        "split": "train",
+        "windows": 6224,
+        "scores": 962,
+        "bytes": 274868976,
+        "sha256": "76d883b1e45d2118dd946b4af3272d251b29ae82a7b6c41c8e4ac43f3bfaab5c"
+      },
+      {
+        "name": "train-0006.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0006.tar.zst",
+        "split": "train",
+        "windows": 3378,
+        "scores": 487,
+        "bytes": 142400441,
+        "sha256": "9a40669b0c706e55dcf2728e5ffad97ee7ddfab1136fd66513cec9c791c51ce1"
+      },
+      {
+        "name": "valid-0000.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/valid-0000.tar.zst",
+        "split": "valid",
+        "windows": 3422,
+        "scores": 632,
+        "bytes": 142438518,
+        "sha256": "5922d6eb4c6cd5ed74affd3f66d862cd68e16e8618e0f0f7f051c98785533c9d"
+      }
+    ]
   }
 }
