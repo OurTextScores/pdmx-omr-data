@@ -23,12 +23,12 @@
     "not_fetched": "The Zenodo record also carries ~9.6GB of rendered PDFs and the MIDI set. The converter reads neither, so they are deliberately not locked here.",
     "unpinned_digest": "fetch_source.py refuses a source whose sha256 is null rather than downloading it unverified.",
     "corpus_digests_are_authoritative_here": "Not in the SHA256SUMS beside the data: anyone able to replace a shard on the origin can replace a checksum file hosted next to it. These digests are reviewed in git.",
-    "shard_names_are_unprefixed": "The shards sit at the bucket root as train-NNNN.tar.zst / valid-NNNN.tar.zst, in a bucket shared with other corpora (ossq-source-v1.tar.gz). Packaging any other corpus with the same scheme would overwrite these. A pdmx-homr-v1/ prefix would fix it."
+    "shards_are_prefixed": "Under pdmx-homr-v1/ in a bucket shared with the OSSQ and Lieder source snapshots. package_pdmx.py names shards train-NNNN/valid-NNNN for any corpus, so a second corpus must get its own prefix or it will overwrite these."
   },
   "corpus": {
     "name": "pdmx-homr-v1",
     "published": "2026-09-23",
-    "base_url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev",
+    "base_url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1",
     "sidecar_schema": "homr.notation-sidecar.v6",
     "verovio": "6.2.1",
     "index_sha256": "994759f4bac7b4200225a2c4e2f650fdf2b80820dee967ee65401502dcc842b7",
@@ -48,7 +48,7 @@
     "shards": [
       {
         "name": "train-0000.tar.zst",
-        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0000.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/train-0000.tar.zst",
         "split": "train",
         "windows": 6541,
         "scores": 1024,
@@ -57,7 +57,7 @@
       },
       {
         "name": "train-0001.tar.zst",
-        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0001.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/train-0001.tar.zst",
         "split": "train",
         "windows": 6250,
         "scores": 927,
@@ -66,7 +66,7 @@
       },
       {
         "name": "train-0002.tar.zst",
-        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0002.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/train-0002.tar.zst",
         "split": "train",
         "windows": 6327,
         "scores": 996,
@@ -75,7 +75,7 @@
       },
       {
         "name": "train-0003.tar.zst",
-        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0003.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/train-0003.tar.zst",
         "split": "train",
         "windows": 6512,
         "scores": 976,
@@ -84,7 +84,7 @@
       },
       {
         "name": "train-0004.tar.zst",
-        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0004.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/train-0004.tar.zst",
         "split": "train",
         "windows": 6403,
         "scores": 1004,
@@ -93,7 +93,7 @@
       },
       {
         "name": "train-0005.tar.zst",
-        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0005.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/train-0005.tar.zst",
         "split": "train",
         "windows": 6224,
         "scores": 962,
@@ -102,7 +102,7 @@
       },
       {
         "name": "train-0006.tar.zst",
-        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/train-0006.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/train-0006.tar.zst",
         "split": "train",
         "windows": 3378,
         "scores": 487,
@@ -111,13 +111,18 @@
       },
       {
         "name": "valid-0000.tar.zst",
-        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/valid-0000.tar.zst",
+        "url": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/valid-0000.tar.zst",
         "split": "valid",
         "windows": 3422,
         "scores": 632,
         "bytes": 142438518,
         "sha256": "5922d6eb4c6cd5ed74affd3f66d862cd68e16e8618e0f0f7f051c98785533c9d"
       }
-    ]
+    ],
+    "index_urls": {
+      "train": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/index_train.txt",
+      "valid": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/index_valid.txt",
+      "manifest": "https://pub-d31b33903cd04fec8cc87ee0667c1981.r2.dev/pdmx-homr-v1/manifest.json"
+    }
   }
 }

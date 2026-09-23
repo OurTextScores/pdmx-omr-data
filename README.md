@@ -45,6 +45,10 @@ the data, since anyone able to replace a shard on the origin can replace that to
 
 Sidecars are `homr.notation-sidecar.v6`; renders are Verovio 6.2.1.
 
+Everything lives under a `pdmx-homr-v1/` prefix on the origin. The bucket also holds
+the OSSQ and Lieder *source* snapshots, and `package_pdmx.py` names shards
+`train-NNNN`/`valid-NNNN` for any corpus, so a second corpus needs its own prefix.
+
 ## Build from scratch
 
 ```bash
